@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  CustomSegement
 //
-//  Created by luojie on 16/1/4.
-//  Copyright © 2016年 LuoJie. All rights reserved.
+//  Created by luojie on 15/12/15.
+//  Copyright © 2015年 LuoJie. All rights reserved.
 //
 
 import UIKit

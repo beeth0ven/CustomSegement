@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4510525D1C3A008700404CFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510525C1C3A008700404CFF /* AppDelegate.swift */; };
-		4510525F1C3A008700404CFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510525E1C3A008700404CFF /* ViewController.swift */; };
-		451052621C3A008700404CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 451052601C3A008700404CFF /* Main.storyboard */; };
 		451052641C3A008700404CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451052631C3A008700404CFF /* Assets.xcassets */; };
 		451052671C3A008700404CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 451052651C3A008700404CFF /* LaunchScreen.storyboard */; };
+		451052761C3A00C400404CFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510526F1C3A00C400404CFF /* AppDelegate.swift */; };
+		451052771C3A00C400404CFF /* ScrollPagingSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451052701C3A00C400404CFF /* ScrollPagingSkill.swift */; };
+		451052781C3A00C400404CFF /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451052711C3A00C400404CFF /* SegmentedControl.swift */; };
+		451052791C3A00C400404CFF /* SegmentedVCSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451052721C3A00C400404CFF /* SegmentedVCSubVC.swift */; };
+		4510527A1C3A00C400404CFF /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451052731C3A00C400404CFF /* SegmentedViewController.swift */; };
+		4510527B1C3A00C400404CFF /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451052741C3A00C400404CFF /* StyleKit.swift */; };
+		4510527C1C3A00C400404CFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451052751C3A00C400404CFF /* ViewController.swift */; };
+		4510527E1C3A00CA00404CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4510527D1C3A00CA00404CFF /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		451052591C3A008700404CFF /* CustomSegement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomSegement.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4510525C1C3A008700404CFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4510525E1C3A008700404CFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		451052611C3A008700404CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		451052631C3A008700404CFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		451052661C3A008700404CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		451052681C3A008700404CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4510526F1C3A00C400404CFF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		451052701C3A00C400404CFF /* ScrollPagingSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPagingSkill.swift; sourceTree = "<group>"; };
+		451052711C3A00C400404CFF /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
+		451052721C3A00C400404CFF /* SegmentedVCSubVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedVCSubVC.swift; sourceTree = "<group>"; };
+		451052731C3A00C400404CFF /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		451052741C3A00C400404CFF /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
+		451052751C3A00C400404CFF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4510527D1C3A00CA00404CFF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,35 @@
 		4510525B1C3A008700404CFF /* CustomSegement */ = {
 			isa = PBXGroup;
 			children = (
-				4510525C1C3A008700404CFF /* AppDelegate.swift */,
-				4510525E1C3A008700404CFF /* ViewController.swift */,
-				451052601C3A008700404CFF /* Main.storyboard */,
+				4510527F1C3A011700404CFF /* SegmentedControl */,
+				4510526F1C3A00C400404CFF /* AppDelegate.swift */,
+				451052751C3A00C400404CFF /* ViewController.swift */,
+				451052721C3A00C400404CFF /* SegmentedVCSubVC.swift */,
+				4510527D1C3A00CA00404CFF /* Main.storyboard */,
+				4510526E1C3A009300404CFF /* Supporting Files */,
+			);
+			path = CustomSegement;
+			sourceTree = "<group>";
+		};
+		4510526E1C3A009300404CFF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				451052741C3A00C400404CFF /* StyleKit.swift */,
 				451052631C3A008700404CFF /* Assets.xcassets */,
 				451052651C3A008700404CFF /* LaunchScreen.storyboard */,
 				451052681C3A008700404CFF /* Info.plist */,
 			);
-			path = CustomSegement;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4510527F1C3A011700404CFF /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				451052701C3A00C400404CFF /* ScrollPagingSkill.swift */,
+				451052711C3A00C400404CFF /* SegmentedControl.swift */,
+				451052731C3A00C400404CFF /* SegmentedViewController.swift */,
+			);
+			name = SegmentedControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +153,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4510527E1C3A00CA00404CFF /* Main.storyboard in Resources */,
 				451052671C3A008700404CFF /* LaunchScreen.storyboard in Resources */,
 				451052641C3A008700404CFF /* Assets.xcassets in Resources */,
-				451052621C3A008700404CFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +166,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4510525F1C3A008700404CFF /* ViewController.swift in Sources */,
-				4510525D1C3A008700404CFF /* AppDelegate.swift in Sources */,
+				4510527B1C3A00C400404CFF /* StyleKit.swift in Sources */,
+				451052771C3A00C400404CFF /* ScrollPagingSkill.swift in Sources */,
+				451052791C3A00C400404CFF /* SegmentedVCSubVC.swift in Sources */,
+				4510527A1C3A00C400404CFF /* SegmentedViewController.swift in Sources */,
+				4510527C1C3A00C400404CFF /* ViewController.swift in Sources */,
+				451052781C3A00C400404CFF /* SegmentedControl.swift in Sources */,
+				451052761C3A00C400404CFF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		451052601C3A008700404CFF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				451052611C3A008700404CFF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		451052651C3A008700404CFF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -249,10 +277,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CustomSegement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.beeth0ven.CustomSegement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -260,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CustomSegement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.beeth0ven.CustomSegement;
