@@ -15,7 +15,7 @@ public class SegmentedControl: UIControl {
     private struct Constants {
         private struct SelectedBackgroundView{
             static let DefaultViewHeight: CGFloat = 0
-            static let DefaultWidthInset: CGFloat = 8
+            static let DefaultWidth: CGFloat = 50
             static let DefaultBackgroundColor = UIColor.darkGrayColor()
         }
         
@@ -29,41 +29,40 @@ public class SegmentedControl: UIControl {
         private struct Segment {
             static let DefaultTitle = ""
             static let DefaultSegments: [SegmentTitleProvider] = ["Title1", "Title2"]
-            
         }
         
     }
     
     // Background
     @IBInspectable public
-    var sbvHeight: CGFloat       = Constants.SelectedBackgroundView.DefaultViewHeight        { didSet { updateSelectedBackgroundFrame() } }
+    var sbvHeight: CGFloat = Constants.SelectedBackgroundView.DefaultViewHeight { didSet { updateSelectedBackgroundFrame() } }
     
     @IBInspectable public
-    var sbColor: UIColor            = Constants.SelectedBackgroundView.DefaultBackgroundColor   { didSet { updateSelectedBackgroundColor() } }
+    var sbColor: UIColor = Constants.SelectedBackgroundView.DefaultBackgroundColor { didSet { updateSelectedBackgroundColor() } }
     
     @IBInspectable public
-    var sbWidthInset: CGFloat       = Constants.SelectedBackgroundView.DefaultWidthInset        { didSet { updateSelectedBackgroundFrame() } }
+    var sbWidth: CGFloat = Constants.SelectedBackgroundView.DefaultWidth { didSet { updateSelectedBackgroundFrame() } }
     
     // Title
     @IBInspectable public
-    var titleFont: UIFont               = Constants.Title.DefaultFont               { didSet { updateTitleStyle() } }
+    var titleFont: UIFont = Constants.Title.DefaultFont { didSet { updateTitleStyle() } }
     
     @IBInspectable public
-    var titleColor: UIColor             = Constants.Title.DefalutColor              { didSet { updateTitleStyle() } }
+    var titleColor: UIColor = Constants.Title.DefalutColor { didSet { updateTitleStyle() } }
     
     @IBInspectable public
-    var highlightedTC: UIColor  = Constants.Title.DefalutHighlightedColor   { didSet { updateTitleStyle() } }
+    var highlightedTC: UIColor = Constants.Title.DefalutHighlightedColor { didSet { updateTitleStyle() } }
     
     @IBInspectable public
-    var selectedTC: UIColor     = Constants.Title.DefalutSelectedColor      { didSet { updateTitleStyle() } }
+    var selectedTC: UIColor = Constants.Title.DefalutSelectedColor { didSet { updateTitleStyle() } }
     
     // Segment
     @IBInspectable public
-    var segmentTitle: String                            = Constants.Segment.DefaultTitle        { didSet { updateSegments(titles: segmentTitle) } }
+    var segmentTitle: String = Constants.Segment.DefaultTitle { didSet { updateSegments(titles: segmentTitle) } }
     
-    public var segments: [SegmentTitleProvider]         = Constants.Segment.DefaultSegments     { didSet { updateSegments(titles: nil) } }
+    public var segments: [SegmentTitleProvider] = Constants.Segment.DefaultSegments { didSet { updateSegments(titles: nil) } }
     
-    public private(set) var segmentItems: [UIButton]    = []
+    public private(set) var segmentItems: [UIButton] = []
     
     // Selected
     @IBInspectable public
@@ -210,6 +209,7 @@ private extension SegmentedControl {
         var frame = segment.frame
         frame.size.height = sbvHeight > 0 ? sbvHeight : self.frame.height
         frame.origin.y = sbvHeight > 0 ? self.frame.height - sbvHeight : 0
+        let sbWidthInset = (frame.size.width - sbWidth) / 2
         selectedBackgroundView.frame = UIEdgeInsetsInsetRect(frame, UIEdgeInsetsMake(0, sbWidthInset, 0, sbWidthInset))
     }
 }
@@ -249,5 +249,7 @@ extension Array where Element: UIView {
     }
     
 }
+
+
 
 

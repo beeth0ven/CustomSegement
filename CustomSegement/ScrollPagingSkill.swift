@@ -33,7 +33,7 @@ protocol Pagable: class {
     var selectedIndex: Int { get set }
 }
 
-extension SegmentedControl: Pagable { }
+extension SegmentedControl: Pagable { } // BUG let SegmentedControl not support @IBAction
 
 extension UIPageControl: Pagable{
     var selectedIndex: Int {

@@ -21,24 +21,25 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XuU-JJ-pMy" customClass="SegmentedControl" customModule="CustomSegement" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.84705882349999995" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SSO-ku-Kij"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedBackgroundViewHeight">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sbvHeight">
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
-                                        <color key="value" red="1" green="0.65178256400000001" blue="0.35838014060000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="sbColor">
+                                        <color key="value" red="0.19607843459999999" green="0.58431375029999999" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                        <color key="value" red="0.92156862750000001" green="0.84705882349999995" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
-                                        <integer key="value" value="0"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sbWidth">
+                                        <real key="value" value="300"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isu-2t-orP" customClass="Control" customModule="CustomSegement" customModuleProvider="target">
+                                <rect key="frame" x="165" y="122" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,7 +164,6 @@
                                                 </connections>
                                             </containerView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.18198148906230927" green="0.69426733255386353" blue="0.53024792671203613" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="KZY-uD-wtp" firstAttribute="top" secondItem="MbW-dm-6dG" secondAttribute="top" id="0Hr-F9-zAf"/>
                                             <constraint firstAttribute="bottom" secondItem="hHq-mu-Ybo" secondAttribute="bottom" id="EhA-7I-v1k"/>
@@ -199,14 +199,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0G8-xx-bFz" firstAttribute="leading" secondItem="Tmc-Ra-dwS" secondAttribute="leading" id="3CS-o1-kVn"/>
                             <constraint firstItem="0G8-xx-bFz" firstAttribute="bottom" secondItem="NFH-CD-3lZ" secondAttribute="top" id="9gM-Up-9CD"/>
                             <constraint firstAttribute="trailing" secondItem="xN3-1G-0wv" secondAttribute="trailing" id="PIl-Pa-qKx"/>
                             <constraint firstItem="xN3-1G-0wv" firstAttribute="top" secondItem="yF9-3d-MqR" secondAttribute="bottom" constant="8" symbolic="YES" id="ZXy-Df-X96"/>
                             <constraint firstItem="0G8-xx-bFz" firstAttribute="leading" secondItem="xN3-1G-0wv" secondAttribute="leading" id="he3-3y-bzm"/>
                             <constraint firstItem="xN3-1G-0wv" firstAttribute="leading" secondItem="Tmc-Ra-dwS" secondAttribute="leading" id="hwA-n1-1AE"/>
                             <constraint firstItem="0G8-xx-bFz" firstAttribute="top" secondItem="xN3-1G-0wv" secondAttribute="bottom" constant="8" symbolic="YES" id="nbG-Su-ZSt"/>
+                            <constraint firstAttribute="trailing" secondItem="0G8-xx-bFz" secondAttribute="trailing" id="vUX-ut-BGu"/>
                             <constraint firstItem="0G8-xx-bFz" firstAttribute="trailing" secondItem="xN3-1G-0wv" secondAttribute="trailing" id="yy5-Xx-3vj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="he3-3y-bzm"/>
+                                <exclude reference="yy5-Xx-3vj"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="0G8-xx-bFz" id="erH-in-Oc3"/>
