@@ -8,6 +8,10 @@
 
 import UIKit
 
+// Todo:
+// Font size
+// sbWidth = 0 , sbHeight = 0, showSelectedBackgroundView = true
+
 @IBDesignable
 
 public class SegmentedControl: UIControl {
@@ -20,7 +24,7 @@ public class SegmentedControl: UIControl {
         }
         
         private struct Title {
-            static let DefaultFont = UIFont.boldSystemFontOfSize(12)
+            static let DefaultFontSize: CGFloat = 16
             static let DefalutColor = UIColor.darkGrayColor()
             static let DefalutHighlightedColor = UIColor.yellowColor()
             static let DefalutSelectedColor = UIColor.whiteColor()
@@ -45,7 +49,7 @@ public class SegmentedControl: UIControl {
     
     // Title
     @IBInspectable public
-    var titleFont: UIFont = Constants.Title.DefaultFont { didSet { updateTitleStyle() } }
+    var fontSize: CGFloat = Constants.Title.DefaultFontSize { didSet { updateTitleStyle() } }
     
     @IBInspectable public
     var titleColor: UIColor = Constants.Title.DefalutColor { didSet { updateTitleStyle() } }
@@ -168,7 +172,7 @@ private extension SegmentedControl {
             item.setTitleColor(titleColor, forState: .Normal)
             item.setTitleColor(highlightedTC, forState: .Highlighted)
             item.setTitleColor(selectedTC, forState: .Selected)
-            item.titleLabel?.font = titleFont
+            item.titleLabel?.font = UIFont.systemFontOfSize(fontSize)
         }
     }
     
