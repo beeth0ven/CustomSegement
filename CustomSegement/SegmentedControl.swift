@@ -8,17 +8,14 @@
 
 import UIKit
 
-// Todo:
-// Font size
-// sbWidth = 0 , sbHeight = 0, showSelectedBackgroundView = true
-
 @IBDesignable
 
 public class SegmentedControl: UIControl {
     
     private struct Constants {
         private struct SelectedBackgroundView{
-            static let DefaultViewHeight: CGFloat = 0
+            static let DefaultShowed = true
+            static let DefaultViewHeight: CGFloat = 4
             static let DefaultWidth: CGFloat = 50
             static let DefaultBackgroundColor = UIColor.darkGrayColor()
         }
@@ -39,13 +36,16 @@ public class SegmentedControl: UIControl {
     
     // Background
     @IBInspectable public
+    var sbvShowed: Bool = Constants.SelectedBackgroundView.DefaultShowed { didSet { updateSelectedBackgroundFrame() } }
+    
+    @IBInspectable public
+    var sbvColor: UIColor = Constants.SelectedBackgroundView.DefaultBackgroundColor { didSet { updateSelectedBackgroundColor() } }
+    
+    @IBInspectable public
     var sbvHeight: CGFloat = Constants.SelectedBackgroundView.DefaultViewHeight { didSet { updateSelectedBackgroundFrame() } }
-    
+
     @IBInspectable public
-    var sbColor: UIColor = Constants.SelectedBackgroundView.DefaultBackgroundColor { didSet { updateSelectedBackgroundColor() } }
-    
-    @IBInspectable public
-    var sbWidth: CGFloat = Constants.SelectedBackgroundView.DefaultWidth { didSet { updateSelectedBackgroundFrame() } }
+    var sbvWidth: CGFloat = Constants.SelectedBackgroundView.DefaultWidth { didSet { updateSelectedBackgroundFrame() } }
     
     // Title
     @IBInspectable public
@@ -121,7 +121,13 @@ private extension SegmentedControl {
     
     func updateSegments(titles titles: String?) {
         if let titles = titles {
-            let extractedTitles = titles.characters.split(100, allowEmptySlices: false, isSeparator: { $0 == "," }).map { String($0) }
+            let extractedTitles = titles
+                .characters
+                .split(100,
+                    allowEmptySlices: false,
+                    isSeparator: { $0 == "," })
+                .map { String($0) }
+            
             segments = extractedTitles.map { $0 }
             return
         }
@@ -204,17 +210,24 @@ private extension SegmentedControl {
     }
     
     func updateSelectedBackgroundColor() {
-        selectedBackgroundView.backgroundColor = sbColor
+        selectedBackgroundView.backgroundColor = sbvColor
     }
     
     func updateSelectedBackgroundFrame() {
+        guard sbvShowed else {
+            selectedBackgroundView.frame = CGRectZero
+            return
+        }
+        
         guard selectedIndex < segmentItems.count else { return }
         let segment = segmentItems[selectedIndex]
-        var frame = segment.frame
-        frame.size.height = sbvHeight > 0 ? sbvHeight : self.frame.height
-        frame.origin.y = sbvHeight > 0 ? self.frame.height - sbvHeight : 0
-        let sbWidthInset = (frame.size.width - sbWidth) / 2
-        selectedBackgroundView.frame = UIEdgeInsetsInsetRect(frame, UIEdgeInsetsMake(0, sbWidthInset, 0, sbWidthInset))
+        let frame = segment.frame
+
+        let topInset = sbvHeight == 0 ? 0 : frame.size.height - sbvHeight
+        let widthInset = sbvWidth == 0 ? 0 : (frame.size.width - sbvWidth) / 2
+//        frame.origin.y = sbvHeight > 0 ? self.frame.height - sbvHeight : 0
+//        let sbWidthInset = (frame.size.width - sbWidth) / 2
+        selectedBackgroundView.frame = UIEdgeInsetsInsetRect(frame, UIEdgeInsetsMake(topInset, widthInset, 0, widthInset))
     }
 }
 
@@ -251,7 +264,6 @@ extension Array where Element: UIView {
     func removeFromSuperview() {
         forEach { $0.removeFromSuperview() }
     }
-    
 }
 
 
