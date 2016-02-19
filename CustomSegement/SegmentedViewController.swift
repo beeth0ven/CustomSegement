@@ -23,6 +23,9 @@ class SegmentedViewController: UIViewController, UIScrollViewDelegate, ScrollPag
         return viewControllersBySegueIdentifier[selectedIndex.segueIdentifier]!
     }
     
+    @IBInspectable
+    var animationEnable: Bool = true
+    
     private var shouldLayout = true
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -36,7 +39,7 @@ class SegmentedViewController: UIViewController, UIScrollViewDelegate, ScrollPag
     @IBAction func changeViewController(sender: SegmentedControl) {
         shouldLayout = false
         performSafeSegueWithIdentifier(sender.selectedIndex.segueIdentifier, sender: sender)
-        pageDidChange()
+        updateScrollViewContentOffset(animated: animationEnable)
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {

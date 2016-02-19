@@ -14,9 +14,6 @@ protocol ScrollPagingSkill {
 }
 
 extension ScrollPagingSkill {
-    func pageDidChange() {
-        updateScrollViewContentOffset(animated: true)
-    }
     
     func scrollViewContentOffsetDidChange() {
         let index = Int(scrollView.contentOffset.x / scrollView.bounds.width)
